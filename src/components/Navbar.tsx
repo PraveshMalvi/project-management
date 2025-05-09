@@ -20,7 +20,12 @@ const Navbar = () => {
   return (
     <div className="w-full h-[60px] bg-black/80 flex items-center sm:px-12 px-8">
       <div className="w-full flex justify-between items-center">
-        <p className="text-white m-0 p-0 text-xl font-bold">Projectiles</p>
+        <Link
+          href={"/projects"}
+          className="text-white m-0 p-0 text-xl font-bold"
+        >
+          Projectiles
+        </Link>
         {/* for large screens */}
         <div className="md:flex hidden justify-center items-center gap-8">
           <Link

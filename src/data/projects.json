@@ -1,0 +1,53 @@
+[
+  {
+    "id": "project-1",
+    "title": "Riverfront Residency",
+    "location": "Pune, MH",
+    "geolocation": { "lat": 18.5204, "lng": 73.8567 },
+    "completionPercentage": 78,
+    "monthlyProgress": [10, 15, 30, 45, 55, 63, 70, 78],
+    "images": [
+      "/images/riverfront1.jpg",
+      "/images/riverfront2.jpg",
+      "/images/riverfront3.jpg"
+    ],
+    "videos": [
+      "https://www.youtube.com/embed/abc123",
+      "https://www.youtube.com/embed/def456"
+    ]
+  },
+  {
+    "id": "project-2",
+    "title": "Skyline Heights",
+    "location": "Mumbai, MH",
+    "geolocation": { "lat": 19.076, "lng": 72.8777 },
+    "completionPercentage": 52,
+    "monthlyProgress": [5, 8, 15, 25, 35, 45, 50, 52],
+    "images": [
+      "/images/skyline1.jpg",
+      "/images/skyline2.jpg",
+      "/images/skyline3.jpg"
+    ],
+    "videos": [
+      "https://www.youtube.com/embed/ghi789",
+      "https://www.youtube.com/embed/jkl012"
+    ]
+  },
+  {
+    "id": "project-3",
+    "title": "Green Valley View",
+    "location": "Nagpur, MH",
+    "geolocation": { "lat": 21.1458, "lng": 79.0882 },
+    "completionPercentage": 90,
+    "monthlyProgress": [20, 35, 50, 65, 75, 80, 85, 90],
+    "images": [
+      "/images/greenvalley1.jpg",
+      "/images/greenvalley2.jpg",
+      "/images/greenvalley3.jpg"
+    ],
+    "videos": [
+      "https://www.youtube.com/embed/mno345",
+      "https://www.youtube.com/embed/pqr678"
+    ]
+  }
+]
