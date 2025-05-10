@@ -36,7 +36,7 @@ const Dashboard = () => {
           <h4 className="text-lg font-semibold mb-2">
             Monthly Completion Progress
           </h4>
-          <ResponsiveContainer width="100%" height={300}>
+          <ResponsiveContainer width="100%" height={400}>
             <LineChart data={lineData}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="month" />
@@ -60,7 +60,7 @@ const Dashboard = () => {
           <h4 className="text-lg font-semibold mb-2">
             Overall Completion Percentage
           </h4>
-          <ResponsiveContainer width="100%" height={300}>
+          <ResponsiveContainer width="100%" height={400}>
             <BarChart data={completionData}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="name" />

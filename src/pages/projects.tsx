@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { Project } from "@/types/project";
 import projectsData from "@/data/projects.json";
 import dynamic from "next/dynamic";
@@ -8,6 +8,7 @@ import Link from "next/link";
 
 const ProjectMap = dynamic(() => import("@/components/MiniMap"), {
   ssr: false,
+  loading: () => <div className="w-[70px] h-[70px] bg-gray-100 rounded" />,
 });
 
 export default function Projects() {
@@ -15,22 +16,22 @@ export default function Projects() {
   const [sortAsc, setSortAsc] = useState(true);
 
   const filteredProjects = useMemo(() => {
-    const filtered = projectsData.filter((project: Project) =>
+    return projectsData.filter((project: Project) =>
       `${project.title} ${project.location}`
         .toLowerCase()
         .includes(search.toLowerCase())
     );
 
-    const sorted = [...filtered].sort((a, b) => {
-      const titleA = a.title.toLowerCase();
-      const titleB = b.title.toLowerCase();
-      return sortAsc
-        ? titleA.localeCompare(titleB)
-        : titleB.localeCompare(titleA);
-    });
+    // const sorted = [...filtered].sort((a, b) => {
+    //   const titleA = a.title.toLowerCase();
+    //   const titleB = b.title.toLowerCase();
+    //   return sortAsc
+    //     ? titleA.localeCompare(titleB)
+    //     : titleB.localeCompare(titleA);
+    // });
 
-    return sorted;
-  }, [search, sortAsc]);
+    // return sorted;
+  }, [search]);
 
   return (
     <div className="w-full">
@@ -66,6 +67,7 @@ export default function Projects() {
                 <p className="text-sm text-gray-600 mb-0">{project.location}</p>
               </div>
               <ProjectMap
+                key={project.id}
                 center={[project.geolocation.lat, project.geolocation.lng]}
               />
             </div>
