@@ -1,5 +1,3 @@
-"use client";
-
 import { useState, useMemo, useEffect } from "react";
 import { Project } from "@/types/project";
 import projectsData from "@/data/projects.json";

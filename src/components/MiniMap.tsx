@@ -1,5 +1,3 @@
-"use client";
-
 import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
@@ -7,7 +5,6 @@ import { LatLngExpression } from "leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
-// Fix Leaflet icon paths
 delete (L.Icon.Default.prototype as any)._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl:
@@ -16,7 +13,6 @@ L.Icon.Default.mergeOptions({
   shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
 });
 
-// Dynamic import MapContainer only client-side
 const MapContainer = dynamic(
   () => import("react-leaflet").then((mod) => mod.MapContainer),
   { ssr: false }
@@ -39,7 +35,6 @@ export default function MiniMap({ center }: MiniMapProps) {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    // Ensures map is rendered only on the client
     setIsMounted(true);
   }, []);
 
